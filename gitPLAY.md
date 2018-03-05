@@ -7,8 +7,9 @@
 
 # 3.为GitHub账号添加SSH Keys
 - 创建SSH key
-	-ssh-keygen -t rsa -C "sunm8917@gmail.com"
-- 然后用cat查看id_rsa.pub文件内的内容，粘帖到github帐号管理的添加SSH key界面中。	-cat ~/.ssh/id_rsa.pub
+	- ssh-keygen -t rsa -C "sunm8917@gmail.com"
+- 然后用cat查看id_rsa.pub文件内的内容，粘帖到github帐号管理的添加SSH key界面中。
+	- cat ~/.ssh/id_rsa.pub
 - 添加到GitHub: 登录GitHub> 点击“Settings”> SSH keys>Add SSH key
 
 # 4.git 问题 warning: push.default 尚未设置
