@@ -18,7 +18,7 @@ https://www.jetbrains.com/pycharm/
     Name=Pycharm  
     GenericName=Pycharm3  
     Comment=Pycharm3:The Python IDE  
-    Exec="解压后的文件夹/bin/pycharm.sh" %f  
+    Exec="解压后的文件夹/bin/pycharm.sh" %f(或者Exec=sh /解压后的文件夹/bin/pycharm.sh)  
     Icon=解压后的文件夹/bin/pycharm.png  
     Terminal=pycharm  
     Categories=Pycharm; 
