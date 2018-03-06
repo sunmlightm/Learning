@@ -1,4 +1,6 @@
-# 1.安装git 
+# 1.安装git
+- sudo apt-get install git
+- git init  (通过git init命令把这个目录变成Git可以管理的仓库) 
 
 # 2.设置用户名和email
 - git config --global user.name "sunmlight（用户名）"
