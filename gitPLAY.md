@@ -18,3 +18,14 @@ matching 参数是 Git 1.x 的默认行为，其意是如果你执行 git push �
 - $ git config --global push.default matching
 而对于 simple ，请输入：
 $ git config --global push.default simple
+
+# 5.同步
+- git clone +链接 将远程连接同步到本地
+- git add × 获取全部
+- git commit -m “备注”
+- git push 同步到远程github
+- git pull 拉下最新的代码
+- git log 查看同步历史
+
+
+
