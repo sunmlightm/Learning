@@ -37,7 +37,7 @@ $ git config --global push.default simple
 - `git add *`
 - `git commit -m "备注"`
 - `git push`
-- `git diff`:查看提交了什么
+- `git git diff <filename>`:查看文件在工作目录与暂存区的差别
 - `git log`查看提交历史
 - `git pull`:拉下最新的代码
 -  Git status查看文件状态（是否被提交）
