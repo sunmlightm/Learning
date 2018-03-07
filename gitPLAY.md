@@ -30,5 +30,23 @@ $ git config --global push.default simple
 - git pull 拉下最新的代码
 - git log 查看同步历史
 
+# git基本命令
+- `git clone 项目地址`
+- `cd 项目地址`
+- `vim notes.md`
+- `git add *`
+- `git commit -m "备注"`
+- `git push`
+- `git diff`:查看提交了什么
+- `git log`查看提交历史
+- `git pull`:拉下最新的代码
+-  Git status查看文件状态（是否被提交）
+-  git rm 文件名  删除文件
+-  git show 查看改变
+-  git branch 查看本地分支
+-  git status 查看本份之文件情况
+-  git checkout -b develop新建并切换到deve分支
+-  git checkout master 切换到master分支
+-  git merge develop 将develop分支合并到当前分支
 
 
