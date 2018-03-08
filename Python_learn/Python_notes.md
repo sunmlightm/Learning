@@ -105,7 +105,7 @@ oct(x )|将一个整数转换为一个八进制字符串
 - **center**  居中，两边加相同位数的空格  str.center(10)
 - **strip**  删除两段空白字符
 - **isspace** 如果 str 中只包含空格，则返回 True，否则返回 False.如果有多个空格同样返回True
-- **join**  str.join(str1) str 中每个字符后面插入str1,构造出一个新的字符串
+- **join**  ','.join('abc')  将字符串abc中的每个成员以字符','分隔开再拼接成一个字符串。join里放列表、元组、字典也是可以的
 - **capitalize** 把字符串的第一个字符大写 str.capitalize()
 - **title** 把字符串的每个单词首字母大写
 - **ljust**  str.ljust(width)  返回一个原字符串左对齐,并使用空格填充至长度 width 的新字符串
