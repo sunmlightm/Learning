@@ -11,8 +11,8 @@ https://www.jetbrains.com/pycharm/
 - **制作PyCharm启动快捷方式**
     - 使用以下命令创建快捷方式
 ```
-1、在终端输入 sudo gedit /usr/share/applications/Pycharm.desktop 
-2、 然后在创建好的Pycharm.desktop中输入：
+1、在终端输入 sudo gedit /usr/share/applications/Pycharm.desktop （若出现无法建立desktop的错误将gedit换为vim编辑器）
+2、 然后在创建好的Pycharm.desktop中输入以下代码（注意代码中的中文部分替换为正确的路径）：
 [Desktop Entry]  
 Type=Application  
 Name=Pycharm  
