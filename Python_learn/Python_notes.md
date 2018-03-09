@@ -100,3 +100,53 @@ print('你好')如果直接运行输出，程序会出错
 - **排序**
     - sort方法是将list按特定顺序重新排列，默认为由小到大，参数reverse=True可改为倒序，由大到小。
     - reverse方法是将list逆置。
+#### 元组tuple
+- 定义方式：
+    - 2,3,4
+    - 使用（）：（2,3,4）
+    - 注意：a=（10）>>int类型 a=（10，）>>元组类型
+- 元组中数据无法修改、删除、添加
+- 元组可以使用的函数：index，count
+- tuple（）可以将列表、字符串转换为元组。参数不能为int类型
+
+#### 字典
+- 以键值对作为整体保存数据。一个字典中的key不能重复，如果有相同的则后面的值覆盖前边的。
+    字典中元素是无序的
+- 字典中根据key获取值：字典名[key]。也可以通过get（）。字典名.get(key,default)>>如果找不到key显示默认值
+- 删除
+    - del 字典['key']没有返回值
+    - del+字典名（删除整个字典,删除后字典不存在）
+    - clear 清空字典
+    - pop  字典.pop（‘key’）返回被删除的值
+    - popitem 随机删除 字典.popitem（）返回被删除的键值对
+- 修改 字典[key]=新值
+- .keys():字典.keys()返回字典中所有的key
+- .values():值
+- .items(): 键值对
+- has_key
+- 遍历字典的key-value（键值对）:for key,value in infos.items():
+   print("key={},value={}".format(key,value))
+- 使用枚举遍历enumerate():既要遍历索引又要遍历元素时
+``` 
+names = ["宋江","卢俊义","吴用"]
+for index,value in enumerate(names):
+   print("%d %s " % (index,value))
+   
+enumerate还可以接收第二个参数，用于指定索引起始值，如：
+names = ["宋江","卢俊义","吴用"]
+for index,value in enumerate(names,2):
+   print("%d %s " % (index,value))
+>>>2宋江
+   3卢俊义
+   4吴用
+```
+    - 遍历字典和遍历值：
+    ```
+    infos = {'name':'宋江', 'id':100, 'sex':'男生', 'address':'中国梁山'}
+    for index,value in enumerate(infos):
+       print("%d %s " % (index,value))
+    遍历值
+    infos = {'name':'宋江', 'id':100, 'sex':'男生', 'address':'中国梁山'}
+    for index,value in enumerate(infos.values()):
+       print("%d %s " % (index,value))
+```
