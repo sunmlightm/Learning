@@ -1,3 +1,8 @@
+## 1.Ubuntu16.04及以上版本：
+- 1、安装专业版：在终端中输入 #sudo snap install pycharm-professional --classic
+- 2、安装教学版：sudo snap install pycharm-community --classic
+
+## 2.其他版本Linux：
 - 官网下载PyCharm，官网提供付费版和免费版：
 https://www.jetbrains.com/pycharm/
 - 下载好的是tr.gz压缩包，自行解压到软件安装目录中（随便一个目录）
