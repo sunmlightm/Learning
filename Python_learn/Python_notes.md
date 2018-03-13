@@ -26,6 +26,8 @@ print('你好')如果直接运行输出，程序会出错
 - 标识符是区分大小写的
     - Cat 和cat是两个不同的变量
 
+
+
 #### 字符串
 - **sys.getsizeof(boject)** 以字节（byte）为单位返回对象大小。
 - **len()**  方法返回对象（字符、列表、元组、字典等）长度或项目个数。
@@ -33,7 +35,7 @@ print('你好')如果直接运行输出，程序会出错
   print('{1},{0},{1}'.format('刘备',20)) >>20，刘备，20
   print('{name},{age}'.format(age=28,name='曹操'))>>曹操，28
   通过映射list：a_list=['曹操'，20] format（a_list）
-- 切片的语法：**[起始:结束:步长] ** 选取的区间属于**左闭右开型**,不写步长默认是1
+- 切片的语法：**[起始:结束:步长]**  选取的区间属于 **左闭右开型**,不写步长默认是1
   
   name[0:3:1]
 
@@ -52,7 +54,7 @@ print('你好')如果直接运行输出，程序会出错
 - **find**:检测 str 是否包含在 mystr中，如果是返回开始的索引值，否则返回-1
 - **rfind**
 类似于 find()函数，不过是从右边开始查找
-- **index()** 跟find()方法一样，只不过如果str不在 mystr中会报一个异常.
+- **index()** 参数是要查找的元素。跟find()方法一样，只不过如果str不在 mystr中会报一个异常.
 - ridex
 - **replace** 把 mystr 中的 str1 替换成 str2,如果 count 指定，则替换不超过 count 次，最多等于count     
     str.replace(str1, str2, mystr.count(str1))
@@ -99,7 +101,9 @@ print('你好')如果直接运行输出，程序会出错
     - index和count index和count与字符串中的用法相同
 - **排序**
     - sort方法是将list按特定顺序重新排列，默认为由小到大，参数reverse=True可改为倒序，由大到小。
-    - reverse方法是将list逆置。
+    - sort(key=none,reverse=falus) key:按照key排序（字典）reverse方法是将list逆置。
+
+
 #### 元组tuple
 - 定义方式：
     - 2,3,4
@@ -139,14 +143,92 @@ for index,value in enumerate(names,2):
 >>>2宋江
    3卢俊义
    4吴用
-```
+
     - 遍历字典和遍历值：
-    ```
+   
     infos = {'name':'宋江', 'id':100, 'sex':'男生', 'address':'中国梁山'}
     for index,value in enumerate(infos):
        print("%d %s " % (index,value))
     遍历值
     infos = {'name':'宋江', 'id':100, 'sex':'男生', 'address':'中国梁山'}
     for index,value in enumerate(infos.values()):
-       print("%d %s " % (index,value))
+       print("%d %s " % (index,value))
 ```
+
+
+
+#### set集合
+- set:{1,2,3} 无序，元素不允许重复
+
+#### Python内置函数
+- cmp(item1, item2) python2中比较两个值。相等返回0，小于返回-1大于返回1
+- len(item) 计算容器中元素个数
+- max(item)返回容器中元素最大值
+- min(item)
+- del(item) && del item删除
+
+#### 引用
+- id（item）获取item的内存地址以数字形式表现
+- 可变类型：列表，字典。  不可变：字符串 数值 元组
+- 字符串 a，b交换位置： a，b=b，a
+
+#### 函数
+- 具有独立功能的代码组织为一个小模块
+- 函数定义：
+            
+        def 函数名（参数1，参数2）：
+        代码
+        注意：标识符由字母下划线和数字组成切不能以数字开头。（推荐：函数名小写可以加入下划线增加可读性）
+> - 不定长参数：def test(a,b,*args,**kwargs)
+> tsst(1,2,3,4)3,4赋值给args，args是一个元组，**kwargs是字典。
+- 在函数中，加入global会将局部变量转为全局变量 （global a）
+> - 递归:
+
+    def sum(num):
+        if num==1:
+            return num
+        else:
+            return num+sum(num-1)
+    print(sum(10))
+- 匿名函数 sum=**lambda** x,y:x+y print(sum(1,2))
+- eval 将字符串去除“ ”变为程序代码
+- 保存多个返回值
+> 
+    return a，b
+    a，b=函数名（）
+- 查看內建函数
+> 
+    func_names = dir(__builtins__)
+    print(func_names)
+
+    在交互模式下
+    dir(__builtin__)或者dir(__builtins__)
+    或者
+    import builtins
+    print(dir(builtins))
+#### 文件
+> 
+    f=open("text.txt","w")
+    f.write("hello world")
+    f.close()
+
+- **open**(file,mode='r')打开文件
+    - **r** :以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。如果文件不存在会崩溃。
+    - **w** :打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+    - **r+** 打开一个文件用于读写。文件指针将会放在文件的开头。如果文件不存在会崩溃.会**从文件开头开始覆盖文件**
+    - **w+** 打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。
+    - **a+** 打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是**追加模式**。如果该文件不存在，创建新文件用于读写。
+    - **操作二进制文件：普通操作指令加b 如：rb,wb,rb+,ab+**
+- **close()** 关闭
+- **write** ("写入的内容")
+- **read(num)** 使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度（单位是字节(如果是汉字，则单位是字符)），如果没有传入num，那么就表示读取文件中所有的数据。
+- **readlines** 就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素.
+- **readline** 读取一行
+- 文件复制：源文件 目标文件循环读写
+- **tell()** 获取当前指针位置
+- **seek(offset,from)** offset偏移量 from方向：0开头1:表示当前位置 2:表示文件末尾
+    - **python3中：**
+        - 定位到文件开头：seek(0,0)，seek(3,0);不支持seek(负数,0);
+        - 定义文件当前位置：支持seek(0,1)；不支持seek(正,1)和seek(负数,1)
+        - 定位到文件末尾：支持seek(0,2)；不支持seek(正,2)和seek(负数,2)
+    - python2中支持seek（负数，1,）（负数，2）
