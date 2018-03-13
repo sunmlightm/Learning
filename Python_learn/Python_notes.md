@@ -232,3 +232,19 @@ for index,value in enumerate(names,2):
         - 定义文件当前位置：支持seek(0,1)；不支持seek(正,1)和seek(负数,1)
         - 定位到文件末尾：支持seek(0,2)；不支持seek(正,2)和seek(负数,2)
     - python2中支持seek（负数，1,）（负数，2）
+#### OS模块
+**导入os模块：import OS** 系统内置，如果使用需要导入
+- **renam** (原文件名，目标文件名)文件或文件夹重命名 OS.rename(text1,text2)
+- **remove**(文件名) 删除文件
+- os.**mkdir**("name")创建单个文件夹
+- os.**makedirs**("names/name/na")多层文件夹创建，最外层文件夹若存在返回提示错误
+- os.**getcwd**()获取当前路径
+- os.**chdir**("./../")改变目录,进入当前目录的上级目录 切换到当前目录的子文件夹：os.chdir(./文件夹名)
+- os.**listdir**("./")获取当前目录下所有的文件和文件夹，返回值是一个列表
+- os.**rmdir** 删除文件夹（必须是空文件夹）
+- import shutil
+
+    **shutil.rmtree**("张三")
+#### 换行问题：
+- Linux，新mac下，**\n** 换行
+- windows  **\r\n**换行
