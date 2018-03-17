@@ -17,15 +17,15 @@ https://www.jetbrains.com/pycharm/
     - 使用以下命令创建快捷方式
 ```
 1、在终端输入 sudo gedit /usr/share/applications/Pycharm.desktop （若出现无法建立desktop的错误将gedit换为vim编辑器）
-2、 然后在创建好的Pycharm.desktop中输入以下代码（注意代码中的中文部分替换为正确的路径）：
-[Desktop Entry]  
-Type=Application  
-Name=Pycharm  
-GenericName=Pycharm3  
-Comment=Pycharm3:The Python IDE  
-Exec="解压后的文件夹/bin/pycharm.sh" %f(或者Exec=sh /解压后的文件夹/bin/pycharm.sh)  
-Icon=解压后的文件夹/bin/pycharm.png  
-Terminal=pycharm  
+2、 然后在创建好的Pycharm.desktop中输入以下代码（注意代码中的Exec和Icon部分替换为正确的路径）：
+[Desktop Entry]
+Type=Application
+Name=Pycharm
+GenericName=Pycharm3
+Comment=Pycharm3:The Python IDE
+Exec="/home/snakeson/developer/pycharm-community-2017.2.3/bin/pycharm.sh" %f
+Icon=/home/snakeson/developer/pycharm-community-2017.2.3/bin/pycharm.png
+Terminal=pycharm
 Categories=Pycharm; 
 ```
 - 在启动器中搜索Pycharm，启动即可。若搜索不到在/usr/share/applications文件夹中找到Pycharm.desktop 复制到桌面
