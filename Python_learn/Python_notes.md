@@ -248,3 +248,61 @@ for index,value in enumerate(names,2):
 #### 换行问题：
 - Linux，新mac下，**\n** 换行
 - windows  **\r\n**换行
+#### 面向对象(Object Oriented Programming，OOP)
+- 定义类：
+> 
+    class Name(object): 命名：大驼峰
+        def name1(self):
+            ...
+        def name2(self):
+            ...
+- 对象：
+    对象名=Name（）
+- 调用：对象名.name1()
+- 添加属性： 对象名.属性名=value（添加的属性只应用到了此对象中，类不受影响）
+- self:某个对象调用其方法时，Python解释器会把这个对象作为第一个参数传递给self.（可以使用其他名字替代self，推荐使用self）
+
+> 
+    class Cat(object):
+            def eat(self):
+                print("%s:eat",%(self.name))
+    bluecat=Cat()
+    bluecat.name="蓝猫"
+    bluecat.eat  >>>打印：蓝猫：eat
+
+- __ init __定义一个初始化函数，通常可以用来实现默认值赋值.init函数在类中可以多个同时存在，下边的默认覆盖上面的属性
+> 
+    class Cat(object):
+        def __ init__(self):
+            self.name="tom"
+        def eat(self):
+            print("%s:eat",%(self.name))
+    bluecat=Cat()
+    bluecat.eat  >>>打印：tom：eat
+
+- id(对象名)打印内存地址
+- __ str __：打印对象名时默认调用str方法：必须有return  
+- __del __:删除对象 Python解释器执行完整个代码后会默认最后调用__del __
+- import sye   sys.getrefcount(对象)查看此对象的引用空间有几个引用关系（sys.getrefcount自身也算一个）
+- 面向对象四大特征：抽象、封装、继承、多态
+- 继承：子类可以继承父类的属性和方法，但不能继承私有
+- 重写:所谓重写，就是子类中，有一个和父类相同名字的方法，在子类中的方法会覆盖掉父类中同名的方法
+- super（）1、通过super().work()调用父类的方法 2、通过类名.父类方法名.(self)
+- .__mro __可以查看类的对象搜索方法时的先后顺序
+- **类方法：@classmethod** 类方法中不能使用对象的属性
+- **静态方法：@staticmethod** 可以调用类属性，要想使用对象属性必须要传参，通过参数对象调用。
+- **__ new__** 执行的第一个动作
+> def __ new__(cls) **注意参数不是self** 方法定义为静态方法，并且至少需要传递一个参数cls
+
+- __call __ 对象当做方法使用的时候:对象()
+- __base__属性，可以查看类上一层的父类是什么
+
+
+- **简单工厂模式**:
+- **工厂方法模式**: 
+- 
+
+
+
+- __name __:class的名字.如果在当前类使用的话,默认值是 __main __.如果是当前类导入到其他类中,则打印的是类名
+if __ name __ == __main __判断是否为当前类
