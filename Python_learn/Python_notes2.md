@@ -182,4 +182,13 @@ _slots__定义的属性仅对当前类实例起作用，对继承的子类是不
 
 
 
-    
+#### 线程
+- 自定义线程：
+    - 自定义线程类必须继承Thread
+    - __init __ 方法注意调用super().__init __()
+
+- 互斥锁:
+    - from threading import Lock
+    - mutex = Lock()创建锁
+    - mutex.acquire()锁定,可以设置超时
+    - mutex.release()释放
