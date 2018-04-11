@@ -206,7 +206,7 @@ for index,value in enumerate(names,2):
     或者
     import builtins
     print(dir(builtins))
-#### 文件
+### 文件
 > 
     f=open("text.txt","w")
     f.write("hello world")
@@ -232,6 +232,7 @@ for index,value in enumerate(names,2):
         - 定义文件当前位置：支持seek(0,1)；不支持seek(正,1)和seek(负数,1)
         - 定位到文件末尾：支持seek(0,2)；不支持seek(正,2)和seek(负数,2)
     - python2中支持seek（负数，1,）（负数，2）
+
 #### OS模块
 **导入os模块：import OS** 系统内置，如果使用需要导入
 - **renam** (原文件名，目标文件名)文件或文件夹重命名 OS.rename(text1,text2)
@@ -248,6 +249,7 @@ for index,value in enumerate(names,2):
 #### 换行问题：
 - Linux，新mac下，**\n** 换行
 - windows  **\r\n**换行
+
 #### 面向对象(Object Oriented Programming，OOP)
 - 定义类：
 > 
@@ -306,3 +308,68 @@ for index,value in enumerate(names,2):
 
 - __name __:class的名字.如果在当前类使用的话,默认值是 __main __.如果是当前类导入到其他类中,则打印的是类名
 if __ name __ == __main __判断是否为当前类
+
+
+- 调用父类的 __ init __():
+    - super().__init __()
+    - Father.__init __(self)
+    - super().__init __(name)
+    - super(Son,self).__init __(name)
+
+
+
+#### 异常
+- 捕获异常:
+>
+    try:
+        可能发生异常的代码
+    except +异常类型:一个try可以有多个except
+    没有异常则except部分不执行
+    except(异常1,异常2)
+    except:
+        发生异常时进入的代码
+    不加异常状态的except必须放在最下面
+
+- 获取异常的信息描述:
+> 
+    except (要捕获的异常1,异常2) as result:
+        print("异常:%s"%result)
+    except Exception as result :(捕获所有异常)
+    print("出错了:%s" % result)
+
+- else
+> 
+    try:
+    num = 100
+    print(num)
+    except Exception as result :
+        print("出错了:%s" % result)
+    
+    else:(程序没有错执行else)
+        print("程序没有错，正常执行到else这里了...") 
+- finally:无论有没有异常都会执行的代码
+- try嵌套
+> 
+    try
+        ..
+        try
+            ..
+    except
+    异常有传递性
+- raise抛出系统的异常
+- 
+-
+
+#### 模块
+- 模块.__file __获取模块的位置  
+- 导入:
+    - import 模块名
+    - from 模块名 import 方法名
+    - from 模块名 import * 导入该模块所有的内容
+    - __ all __ :__all __ = ["num","test1","Person"]对import *有用（定义可以导入的内容）（ __all __加在模块中）
+
+- sys.argv接收程序传递的参数
+- 列表推导式：list=[x for x in range(1,5)]>>>1,2,3,4
+- 列表生成式：list=[5 for x in range(1,5)]>>>[5,5,5,5]
+- list=[x for x in range(1,5) if x%2==0]>>>2,4
+- list=[(x,y) for x in range(2) for y in range(2)]>>>[(0,0),(0,1),(1,0),(1,1)]
