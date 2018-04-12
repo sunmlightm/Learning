@@ -1,0 +1,56 @@
+
+1.打开终端快捷键：Ctrl+alt+t
+2.终端文字调大快捷： Ctrl+shift+ +
+3.终端文字调小快捷键：Ctrl+ -
+4.切换到家目录/home/atguiug的三种方式： 1:cd    2:cd ~   3:cd /home/atguiug
+5.查看当前目录：pwd
+6.切换到上级目录：cd .. 
+7.切换到上次所在目录：cd –
+8.清空屏幕三种命令：clear ctrl+l reset
+9.查看历史命令和执行某个历史命令：  history
+10.列出当前目录详细信息： ls -alh
+
+11.写一个使用管道符的案例： 
+ls -lsh | more
+
+12.强制结束程序:ctrl+c
+13.显示当前目录路径：pwd
+14.创建名叫 atguigu.txt文件 :
+touch atsuigu.txt
+15.创建test文件夹：mkdir test
+16.创建目录a/b/c 目录mkdir a/b/c -p
+17.以目录树的方式显示：tree
+18.删除test目录的两种方式1:rmdir test 2:rm test -r
+19.当前目录下递归删除文件夹a/b/c/e的命令： rmdir a/b/c -p
+20.从普通账号切换到root账号：	
+sudo -s
+21.从root账号退回普通账号：exit
+22.window 查看ip命令： ipconfig,
+linux:ifconfig
+23.把/bin的内容详情列出，并且重新写入到test.txt文件中：ls -lah /bin >test.txt
+24.把/根目录下的文件详细列出并且不覆盖方式写入test.txt文件中：ls -lah / >> test.txt
+
+25.把 两个文件的内容合并，并且单独写一个文件中：cat 1.txt 2.txt >3.txt
+
+26.grep命令，搜索文件的内容
+ 执行 ls /bin > test.txt命令后 
+ 1.1搜索test.txt文件的包含“s”内容,并且以“s”开头，并且忽略大小写和显示行号。
+grep -ni "^s.*s.*" test.txt
+ 1.2搜索test.txt文件的包含“s”内容,并且以“s”结尾，并且忽略大小写和显示行号
+ 
+ 
+27.cp命令的时候
+
+2.1创建一个test目录，把/home/atguigu/02-python高级 拷贝到test目录
+cp -r xxx/ ./xx
+
+28.mv移动目录和文件和修改文件和目录名称mv 01/ ./05
+mv 03.txt/ ./05	mv text.txt ./test
+ 
+29.find查找文件
+4.1根据文件名找文件后缀为.py的文件  find ./ -name "*.py"
+4.2根据文件大小找对应的文件  find -size 2M
+ 
+4.3查找根目录大于或者等于2MB的 并且小于10或者等于的内容find -size +2M -size -10M
+4.4查找根目录拥有者、组、其他用户都拥有读、写、执行权限文件 find ./ -perm 0777
+
