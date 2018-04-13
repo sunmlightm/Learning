@@ -53,4 +53,96 @@ mv 03.txt/ ./05	mv text.txt ./test
  
 4.3查找根目录大于或者等于2MB的 并且小于10或者等于的内容find -size +2M -size -10M
 4.4查找根目录拥有者、组、其他用户都拥有读、写、执行权限文件 find ./ -perm 0777
+1.归档管理
+
+1.1把当前后缀是.txt的所有文件打包成.tar结尾的压缩包: tar -cvf txt.tar *.txt 
+1.2打包成.tar.gz压缩包: tar -zcvf txt.tar.gz *.txt
+ 
+1.3解压.tar.gz压缩包tar -zxvf txt.tar.gz -C ./555/
+ 
+1.4tar.bz2后缀打包tar -jcvf txt.tar.bz2 *.txt
+ 
+1.5解压.tar.bz2压缩包,并且指定目录 tar -jxvf txt.tar.bz2 -C ./555/ 
+1.6打包并且压缩成后缀是.zip的文件zip txt *.txt
+ 
+1.7解压zip: unzip -d ./555/ txt.zip
+ 
+
+2.进程管理-（10分）
+ 2.1列出所有的进程ps -aux
+ 
+ 2.2杀死进程: Kill -9 9133
+3.ifconfig查看或配置网卡信息 -（10分）
+3.1检查两台电脑是否可以通信，是否连接
+   
+ 
+4.用户管理-（10分）
+4.1查看有哪些用户cat /etc/passwd
+ 
+4.2判断用户是否存groups sunml
+ 
+4.3添加test的用户，并且自动创建家目录（这个家目录和账号一样）: sudo useradd test -m
+4.4切换进入到test账号 先使用sudo passwd test创建密码然后su test
+ 
+4.5如何使用普通账号test切换到root账号sudo -s
+ 
+4.6删除登录过的用户test用户或者abc账号（含家目录）
+sudo vim /etc/passwd删除账号然后sudo rm /home/test删除账号家目录 
+5.用户组管理-（10分）
+5.1添加和删除用户组sudo groupadd 123/sudo groupdel 123
+5.2把	用户添加到atguigu这个组
+sudo usermod -g atguigu test
+ 
+6. 用户和权限管理应用-（10分）
+
+1.	创建一个文件 test.txt，修改其权限为 拥有者有者可读可写，其他人没有任何权限。请使用字母法和数字法两种方式。
+ 字母法命令：sudo chown u=rwx,g=rwx,o-rwx 1.txt
+数字法命令：sudo chmod 770 1.txt
+ 
+2.创建一个叫xiaohua的用户，然后创建一个新的用户组叫meinv，并将xiaohua用户添加到meinv这个用户组中，然后创
+建一个新的文件，名字叫123.py，并修它的用户组为meinv。
+sudo useradd xiaohua
+sudo groupadd meinv
+sudo usermod -g meinv xiaohua
+sudo chgrp meinv 123.py
+ 
+ 
+3.创建一个文件a.txt，里面随便写点内容，修改文件权限为拥有者和用户组和其他用户都可读可写可执行，请用数字法
+sudo chmod 777 a.txt
+ 
+7. sublime编辑器-（10分）
+ 代码向右移动，tab 再向左移动shift+tab
+ 创建html_root_dir变量，快捷键变成大写:shift+ku
+ html_ROOt_diR变量,快捷键变成小写shift+kl
+ 把文件中的某个内容全部替换ctrl+h
+ 
+ 整行删除快捷键
+ctrl+shift+k
+8. 假如当前目录下有一个叫test.py文件-（10分）
+1.打开文件命令：vi test.py -->命令模式-->插入模式（i）
+
+ 命令模式--->插入(编辑)模式：esc
+ 从当前光标的前一个字母插入i
+ 从当前光标所在行首插入I
+ 从当前光标后的一个字母插入a
+ 从当前光标所在行的行末插入A
+ 从当前光标所在行的下方开辟新的一行插入o
+ 从当前光标所在行的上方开辟新的一行插入O
+
+ 命令模式-->末行模式(Shift+;)：
+ 存盘退出的两种方式wq/x
+ 不存盘，强制退出q!
+ 放弃所有修改，从上次保存文件开始再编辑 e!
+
+2.从英文输入法转换中文输入法shift
+3.复制和粘贴多行和单行yy / n yy---粘贴:p
+3.剪切和粘贴多行个单行n dd p/ dd p
+5.往右缩进和往左缩进 shift+<< shift+>>
+6.撤销 u 
+7.删除一行 dd
+8.反撤销 ctrl + r
+9.光标移动到屏幕最后一行行首 L
+10.移动到指定行n shift+g
+11.光标移动文件开头 gg
+12.直接到文件最后一行行首shift+g
 
