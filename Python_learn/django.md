@@ -7,7 +7,7 @@
 
 3.cd进入项目文件夹
 
-4.python manage.py startap dir_name (应用文件夹)
+4.python manage.py startapp dir_name (应用文件夹)
 
 5.使用pycharme打开项目文件夹
 
