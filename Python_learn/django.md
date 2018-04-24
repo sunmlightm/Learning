@@ -36,4 +36,6 @@
     def index(request):
         return HttpResponse('123456')
     def page_html(request):
-    	return render(request,'test1.html')
+        a="123"
+        b=[1,2,3]
+    	return render(request,'test1.html',{'a':a,'b':b})
