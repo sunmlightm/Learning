@@ -53,8 +53,8 @@
         add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
         is_delete=models.BooleanField(default=False,*****)
         class Meta:
-            # db_table=''  #更改表名
-            # ordering=[ '-age' ]
+            # db_table=''  #设置在数据库中显示的名字,默认是app名+ _ +模型类名小写形式
+            # ordering=[ '-age' ] #设置以某个字段进行排序, -表示倒序
             verbose_name='学生信息'
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
 
@@ -68,3 +68,5 @@
     - a.name=,...
     - a.save()
     - 方法二: StudentInfo.object.create(name='name',age='12'......)
+
+213
