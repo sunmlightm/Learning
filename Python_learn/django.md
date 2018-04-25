@@ -43,7 +43,7 @@
 10.**models.py** 数据库
 
 **创建表**
->
+
     class StudentInfo(models.Model):
         name=models.CharField(max_length=20,verbose_name='学生姓名')   #CharField=varchar,verbose_name:别名
         age=models.IntegerField(default=18,verbose_name='学生年龄')
@@ -57,6 +57,7 @@
             # ordering=[ '-age' ]
             verbose_name='学生信息'
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
+
 - 生成迁移文件:python manage.py makemigrations
 - 同步文件:python manage.py migrate
 
@@ -67,5 +68,3 @@
     - a.name=,...
     - a.save()
     - 方法二: StudentInfo.object.create(name='name',age='12'......)
-
-123
