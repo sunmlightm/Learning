@@ -66,6 +66,6 @@
     - a=StudentInfo()
     - a.name=,...
     - a.save()
-    ------------------------------------------
+    ****************************
     - StudentInfo.object.create(name='name',age='12'......)
 
