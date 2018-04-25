@@ -45,4 +45,4 @@
     class StudentInfo(models.Model):
         name=models.CharField(max_length=20,verbose_name='学生姓名')   #CharField=varchar,verbose_name:别名
         age=models.IntegerField(default=18,verbose_name='学生年龄')
-        gender=models.CharField(choices=(('girl','女'),('boy','男')))
+        gender=models.CharField(choices=(('girl','女'),('boy ','男')),max_length=6,default='girl',verbose_name='学生性别')
