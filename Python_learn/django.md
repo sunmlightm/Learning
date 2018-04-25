@@ -39,3 +39,10 @@
         a="123"
         b=[1,2,3]
     	return render(request,'test1.html',{'a':a,'b':b})
+ 
+10.**models.py** 数据库
+>
+    class StudentInfo(models.Model):
+        name=models.CharField(max_length=20,verbose_name='学生姓名')   #CharField=varchar,verbose_name:别名
+        age=models.IntegerField(default=18,verbose_name='学生年龄')
+        gender=models.CharField(choices=(('girl','女'),('boy','男')))
