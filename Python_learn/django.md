@@ -19,12 +19,12 @@
 - DATABASES:
     - ENGINE:'django.db.backends.**mysql**'
     - 之后设置mysql的user,password,host,prot,name等
-    
+
 8.**urls.py**:
 - 首先引入应用文件夹下views文件内自己写入的文件
 - urlpatterns:创建引入的url项:(正则,函数名,自定义小名)
 - 例:
-> 
+>
     from haha.views import index,page_html
     url(r'page/',page_html, name='page_html'),
 
@@ -32,14 +32,14 @@
 - 导包:from django.shortcuts import render,HttpResponse(render用于请求网页,HttpResponse用于字符串)
 - 自定义函数,用于返回字符串和html页面(存放在templates文件夹里的html)
 - 例:
-> 
+>
     def index(request):
         return HttpResponse('123456')
     def page_html(request):
         a="123"
         b=[1,2,3]
     	return render(request,'test1.html',{'a':a,'b':b})
- 
+
 10.**models.py** 数据库
 
 **创建表**
@@ -68,3 +68,4 @@
     - a.save()
     - 方法二: StudentInfo.object.create(name='name',age='12'......)
 
+123
