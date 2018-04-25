@@ -41,6 +41,7 @@
     	return render(request,'test1.html',{'a':a,'b':b})
  
 10.**models.py** 数据库
+**创建表**
 >
     class StudentInfo(models.Model):
         name=models.CharField(max_length=20,verbose_name='学生姓名')   #CharField=varchar,verbose_name:别名
