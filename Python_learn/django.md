@@ -59,3 +59,13 @@
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
 - 生成迁移文件:python manage.py makemigrations
 - 同步文件:python manage.py migrate
+
+**单个数据库操作**
+- 数据插入
+    - from students.models import StudentInfo
+    - a=StudentInfo()
+    - a.name=,...
+    - a.save()
+    ------------------------------------------
+    - StudentInfo.object.create(name='name',age='12'......)
+
