@@ -79,3 +79,6 @@
   - all_students=StudentInfo.object.all() 查询全部数据(class里需要有 _ _str__ () )
   - StudentInfo.object.filter(+查询条件)
   - StudentInfo.object.get(条件) ---只能获取一个,获取不到则报异常
+
+- **更改数据**
+  - StudentInfo.object.filter(过滤条件).update(age='')
