@@ -41,6 +41,7 @@
     	return render(request,'test1.html',{'a':a,'b':b})
  
 10.**models.py** 数据库
+
 **创建表**
 >
     class StudentInfo(models.Model):
