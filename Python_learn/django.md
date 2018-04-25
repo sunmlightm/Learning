@@ -86,3 +86,11 @@
 
 - **删除数据**
   - StudentInfo.objects.filter(过滤条件).delete()
+
+
+**创建管理员账号:**
+- python manage.py createsuperuser
+
+**admin.py**
+- from app_name import 数据表名
+- admin.site.register(数据表名)
