@@ -52,6 +52,8 @@
         image = models.ImageField(upload_to='user/%y/%m/%d',max_length=100,verbose_name='学生头像')  #upload_to上传到
         add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
         is_delete=models.BooleanField(default=False,*****)
+        def __str__(self):
+            return self.name
         class Meta:
             # db_table=''  #设置在数据库中显示的名字,默认是app名+ _ +模型类名小写形式
             # ordering=[ '-age' ] #设置以某个字段进行排序, -表示倒序
@@ -62,9 +64,18 @@
 - 同步文件(将数据迁移到数据库中):python manage.py migrate
 
 **单个数据库操作**
-- 数据插入
-    - 方法一: from students.models import StudentInfo
+
+**from students.models import StudentInfo**
+
+- **数据插入**
+    - 方法一:
     - a=StudentInfo()
     - a.name='',a.age=''....
     - a.save()
-    - 方法二: StudentInfo.object.create(name='name',age='12'......)
+    - 方法二:
+    - stu=StudentInfo.object.create(name='name',age='12'......)
+
+- **查询**
+  - all_students=StudentInfo.object.all() 查询全部数据(class里需要有 _ _str__ () )
+  - StudentInfo.object.filter(+查询条件)
+  - StudentInfo.object.get(条件) ---只能获取一个,获取不到则报异常
