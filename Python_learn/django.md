@@ -50,6 +50,8 @@
         image = models.ImageField(upload_to='user/%y/%m/%d',max_length=100,verbose_name='学生头像')  #upload_to上传到
         add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
         is_delete=models.BooleanField(default=False,*****)
-        class Meta:
-            # db_table=''
-            # ordering=[ ' -age' ]
+        class Meta:
+            # db_table=''
+            # ordering=[ '-age' ]
+            verbose_name='学生信息'
+            verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
