@@ -53,8 +53,8 @@
         add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
         is_delete=models.BooleanField(default=False,*****)
         class Meta:
-            # db_table=''  #更改表名
-            # ordering=[ '-age' ]
+            # db_table=''  #更改表名
+            # ordering=[ '-age' ]
             verbose_name='学生信息'
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
 - 生成迁移文件:python manage.py makemigrations
