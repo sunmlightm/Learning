@@ -46,7 +46,7 @@
         name=models.CharField(max_length=20,verbose_name='学生姓名')   #CharField=varchar,verbose_name:别名
         age=models.IntegerField(default=18,verbose_name='学生年龄')
         gender=models.CharField(choices=(('girl','女'),('boy ','男')),max_length=6,default='girl',verbose_name='学生性别')
-        height=models.DecimalField(max_digits=5,decimal_places=2,verbose_name='学生身高')  #max_digits总位数,decimal_places小数位数
-        image = models.ImageField(upload_to='user/%y/%m/%d',max_length=100,verbose_name='学生头像')  #upload_to上传到
-        add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
-        is_delete=models.BooleanField(default=False,*****)
+        height=models.DecimalField(max_digits=5,decimal_places=2,verbose_name='学生身高')  #max_digits总位数,decimal_places小数位数
+        image = models.ImageField(upload_to='user/%y/%m/%d',max_length=100,verbose_name='学生头像')  #upload_to上传到
+        add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
+        is_delete=models.BooleanField(default=False,*****)
