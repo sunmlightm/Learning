@@ -59,12 +59,13 @@
             # ordering=[ '-age' ] #设置以某个字段进行排序, -表示倒序
             verbose_name='学生信息'
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
-在pycharm--底部--PythonConsole中执行以下操作
+在pycharm--底部--Terminal中执行以下操作
 - 生成迁移文件:python manage.py makemigrations
 - 同步文件(将数据迁移到数据库中):python manage.py migrate
 
 **单个数据库操作**
 
+在pycharm--底部--PythonConsole中执行以下操作
 **from students.models import StudentInfo**
 
 - **数据插入**
@@ -73,12 +74,15 @@
     - a.name='',a.age=''....
     - a.save()
     - 方法二:
-    - stu=StudentInfo.object.create(name='name',age='12'......)
+    - stu=StudentInfo.objects.create(name='name',age='12'......)
 
 - **查询**
-  - all_students=StudentInfo.object.all() 查询全部数据(class里需要有 _ _str__ () )
-  - StudentInfo.object.filter(+查询条件)
-  - StudentInfo.object.get(条件) ---只能获取一个,获取不到则报异常
+  - all_students=StudentInfo.objects.all() 查询全部数据(class里需要有 _ _str__ () )
+  - StudentInfo.objects.filter(+查询条件)
+  - StudentInfo.objects.get(条件) ---只能获取一个,获取不到则报异常
 
 - **更改数据**
-  - StudentInfo.object.filter(过滤条件).update(age='')
+  - StudentInfo.objects.filter(过滤条件).update(age='')
+
+- **删除数据**
+  - StudentInfo.objects.filter(过滤条件).delete()
