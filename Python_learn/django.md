@@ -55,3 +55,5 @@
             # ordering=[ '-age' ]
             verbose_name='学生信息'
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
+- 生成迁移文件:python manage.py makemigration
+- 同步文件:python manage.py migrate
