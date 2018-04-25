@@ -62,10 +62,9 @@
 
 **单个数据库操作**
 - 数据插入
-    - from students.models import StudentInfo
+    - 方法一: from students.models import StudentInfo
     - a=StudentInfo()
     - a.name=,...
     - a.save()
-    ****************************
-    - StudentInfo.object.create(name='name',age='12'......)
+    - 方法二: StudentInfo.object.create(name='name',age='12'......)
 
