@@ -52,7 +52,7 @@
         image = models.ImageField(upload_to='user/%y/%m/%d',max_length=100,verbose_name='学生头像')  #upload_to上传到
         add_time=models.DateTimeField(default=datetime.now,verbose_name='添加时间') #datetime需要引入:from datetime import datetime
         is_delete=models.BooleanField(default=False,*****)
-        def __str__(self):
+        def __str__(self):  #python2中是__Unicode__
             return self.name
         class Meta:
             # db_table=''  #设置在数据库中显示的名字,默认是app名+ _ +模型类名小写形式
