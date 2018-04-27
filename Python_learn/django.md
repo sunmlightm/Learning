@@ -94,3 +94,6 @@
 **admin.py**
 - from app_name import 数据表名
 - admin.site.register(数据表名)
+
+重定向: 引入包:from django.core.urlresolvers  import reverse
+`例:return redirect(reverse('student:student_delete')) # redirect需要引入`
