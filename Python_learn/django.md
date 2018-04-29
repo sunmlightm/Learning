@@ -93,7 +93,24 @@
 
 **admin.py**
 - from app_name import 数据表名
-- admin.site.register(数据表名)
+>
+      class StudentInfoAdmin(admin.ModelAdmin):
+        #配置列表页的字段显示
+        list_display = ['name','age','gender','add_time']
+        #配置添加搜索框
+        search_fields = ['name','age','gender','add_time']
+        #配置分页显示数据条数
+        list_per_page = 1
+        #配置过滤器
+        list_filter = ['age','gender']
+        #配置详情页的字段显示以及顺序
+        fields = ['add_time','name']
+      admin.site.register(StudentInfo,StudentInfoAdmin)
 
-重定向: 引入包:from django.core.urlresolvers  import reverse
+**重定向**: 引入包:from django.core.urlresolvers  import reverse
 `例:return redirect(reverse('student:student_delete')) # redirect需要引入`
+
+
+cookie:
+- 获取: request.COOKIES.get('name',None)
+- 设置: return HttpResponseRender(...)
