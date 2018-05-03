@@ -19,6 +19,10 @@
 - DATABASES:
     - ENGINE:'django.db.backends.**mysql**'
     - 之后设置mysql的user,password,host,prot,name等
+- STATIC_URL:
+  - 添加一行: STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+  - 创建static文件夹
+  - html中需要加载: {%load staticfiles%}
 
 8.**urls.py**:
 - 首先引入应用文件夹下views文件内自己写入的文件
@@ -59,6 +63,10 @@
             # ordering=[ '-age' ] #设置以某个字段进行排序, -表示倒序
             verbose_name='学生信息'
             verbose_name_plural=verbose_name #后台默认显示复数形式,加上这一行不会自动加s
+
+- 使用内置表,为内置表添加内容:
+  - from django.contrib.auth.models import AbstractUser
+  - class UserProfile(AbstractUser):加需要增加的内容
 在pycharm--底部--Terminal中执行以下操作
 - 生成迁移文件:python manage.py makemigrations
 - 同步文件(将数据迁移到数据库中):python manage.py migrate
@@ -92,7 +100,7 @@
 - python manage.py createsuperuser
 
 **admin.py**
-- from app_name import 数据表名
+- from .models import 数据表名
 >
       class StudentInfoAdmin(admin.ModelAdmin):
         #配置列表页的字段显示
@@ -114,3 +122,14 @@
 cookie:
 - 获取: request.COOKIES.get('name',None)
 - 设置: return HttpResponseRender(...)
+
+
+#### HTML重用:
+- base.html 父模板
+  - {% block name%}
+  - {% endblock %}
+- 子html:
+  - {% extend base.html %}
+  - {% block name%}
+  - 重写的内容
+  - {% endblock %}
