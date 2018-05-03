@@ -67,6 +67,9 @@
 - 使用内置表,为内置表添加内容:
   - from django.contrib.auth.models import AbstractUser
   - class UserProfile(AbstractUser):加需要增加的内容
+  - def --str--(self):  &    class Meta:
+  - 在seeting中指定默认用户表为自己创建的这个表:AUTH_USER_MODEL = 'users.UserProfile'
+
 在pycharm--底部--Terminal中执行以下操作
 - 生成迁移文件:python manage.py makemigrations
 - 同步文件(将数据迁移到数据库中):python manage.py migrate
@@ -74,7 +77,7 @@
 **单个数据库操作**
 
 在pycharm--底部--PythonConsole中执行以下操作
-**from students.models import StudentInfo**
+**from students.models import StudentInfo
 
 - **数据插入**
     - 方法一:
@@ -129,7 +132,7 @@ cookie:
   - {% block name%}
   - {% endblock %}
 - 子html:
-  - {% extend base.html %}
+  - {% extend 'base.html' %}
   - {% block name%}
   - 重写的内容
   - {% endblock %}
