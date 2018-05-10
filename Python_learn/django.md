@@ -91,6 +91,7 @@
   - all_students=StudentInfo.objects.all() 查询全部数据(class里需要有 _ _str__ () )
   - StudentInfo.objects.filter(+查询条件)
   - StudentInfo.objects.get(条件) ---只能获取一个,获取不到则报异常
+  - filter(add_time__year)可以按addtime的年份查找
 
 - **更改数据**
   - StudentInfo.objects.filter(过滤条件).update(age='')
