@@ -2,7 +2,7 @@
 - dpkg -i **.deb
 - sudo apt-get -f install
 - Root权限运行文件管理sudo nautilus
--tar -zxvf +文件名 解压
+- tar -zxvf +文件名 解压
 #### 命令
 - 打开终端：ctrl+alt+t
     - 关闭：ctrl+d/exit
